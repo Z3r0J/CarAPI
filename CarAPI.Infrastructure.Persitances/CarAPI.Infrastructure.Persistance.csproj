@@ -8,4 +8,14 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarAPI.Core.Application\CarAPI.Core.Application.csproj" />
+    <ProjectReference Include="..\CarAPI.Core.Domain\CarAPI.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

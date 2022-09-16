@@ -9,8 +9,8 @@ namespace CarAPI.Core.Domain.Entities
     public class Car
     {
         public int Id { get; set; }
-        public string Name { get; set; }
         public string Model { get; set; }
+        public string PhotoUrl { get; set; }
         public int Year { get; set; }
         public int Speed { get; set; }
         public int BrandId { get; set; }
