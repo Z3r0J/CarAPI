@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CarAPI.Core.Application.Interfaces.Repositories;
 using CarAPI.Core.Application.Interfaces.Services;
 using System;
 using System.Collections.Generic;

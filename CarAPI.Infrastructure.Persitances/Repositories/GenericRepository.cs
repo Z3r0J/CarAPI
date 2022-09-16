@@ -1,4 +1,5 @@
-﻿using CarAPI.Core.Application.Interfaces.Services;
+﻿using CarAPI.Core.Application.Interfaces.Repositories;
+using CarAPI.Core.Application.Interfaces.Services;
 using CarAPI.Infrastructure.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
