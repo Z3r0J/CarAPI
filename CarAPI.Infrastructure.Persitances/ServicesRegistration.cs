@@ -1,4 +1,6 @@
-﻿using CarAPI.Infrastructure.Persistance.Context;
+﻿using CarAPI.Core.Application.Interfaces.Repositories;
+using CarAPI.Infrastructure.Persistance.Context;
+using CarAPI.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,13 @@ namespace CarAPI.Infrastructure.Persistance
                 .UseSqlServer(configuration.GetConnectionString("CarConnection"), m => m
                 .MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
             }
+
+            #endregion
+
+            #region Repositories
+
+            service.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 
             #endregion
         }
