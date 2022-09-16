@@ -30,7 +30,8 @@ namespace CarAPI.Infrastructure.Persistance
             #region Repositories
 
             service.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
+            service.AddTransient<ICarRepository, CarRepository>();
+            service.AddTransient<IBrandRepository, BrandRepository>();
 
             #endregion
         }

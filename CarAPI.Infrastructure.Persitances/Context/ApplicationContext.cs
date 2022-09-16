@@ -41,7 +41,8 @@ namespace CarAPI.Infrastructure.Persistance.Context
             builder.Entity<Brand>()
                 .HasMany(b => b.Cars)
                 .WithOne(c => c.Brand)
-                .HasForeignKey(x => x.BrandId);
+                .HasForeignKey(x => x.BrandId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             #endregion
 

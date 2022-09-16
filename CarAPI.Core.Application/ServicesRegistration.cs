@@ -16,6 +16,8 @@ namespace CarAPI.Core.Application
 
             service.AddAutoMapper(Assembly.GetExecutingAssembly());
             service.AddTransient(typeof(IGenericServices<,,>), typeof(GenericServices<,,>));
+            service.AddTransient<ICarServices, CarServices>();
+            service.AddTransient<IBrandServices, BrandServices>();
         
         }
     }

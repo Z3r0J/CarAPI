@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CarAPI.Core.Application\CarAPI.Core.Application.csproj" />
     <ProjectReference Include="..\CarAPI.Core.Domain\CarAPI.Core.Domain.csproj" />
     <ProjectReference Include="..\CarAPI.Infrastructure.Persitances\CarAPI.Infrastructure.Persistance.csproj" />
