@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import { Container } from 'reactstrap'
+import Car from '../Car/Car'
+import { CarCard } from '../Car/CarCard'
 
 export default class Layout extends Component {
   render() {
     return (
-      <div>{this.props.children}</div>
+
+      <Container fluid="fluid">
+        {this.props.children}
+      </Container>
     )
   }
 }

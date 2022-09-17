@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Layout from './components/Layout/Layout'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Car from './components/Car/Car'
+import Spinner from './components/Spinner/Spinner';
+
+const Router = React.lazy(() => import('./router/Router'));
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Layout>
-      <h3>Hello</h3>
-    </Layout>
+    <React.Suspense fallback={<Spinner/>}>
+      <Layout>
+        <Router/>
+      </Layout>
+    </React.Suspense>
   )
 }
 
