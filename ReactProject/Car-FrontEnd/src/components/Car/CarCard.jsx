@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle, Col, Row } from 'reactstrap'
 import CarServices from '../../services/CarServices'
+import {useNavigate} from 'react-router-dom'
 
 export const CarCard = ({ car }) => {
-
+    const navigate = useNavigate()
   return (
     <div className='col-lg-3 col-sm-3 col-xl-3 col-md-3 mt-2 mb-2'>
     <Card className="bg-dark text-white border-light shadow shadow-2 rounded rounded-1">
@@ -22,6 +23,7 @@ export const CarCard = ({ car }) => {
           const r = confirm(`Are you sure want to delete ${car.model}?`)
           r?CarServices.DELETE(car.id).then(location.reload()):"";
         }}>Delete</button>
+        <a href={`/edit/${car.id}`} className="btn btn-warning ms-2">Edit</a>
       </CardBody>
     </Card>
     </div>

@@ -7,7 +7,7 @@ export default class Layout extends Component {
   render() {
     return (
 
-      <Container fluid="fluid">
+      <Container fluid="fluid" className='vh-100'>
         {this.props.children}
       </Container>
     )

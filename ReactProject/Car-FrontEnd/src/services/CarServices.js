@@ -27,4 +27,44 @@ CarServices.DELETE = (id)=>{
     }finally{ }
 }
 
+CarServices.GETBYID = (id)=>{
+    try {
+        try {
+            const response = apiURL.get(`Car/GetById/${id}`)
+
+            return response;
+
+        } catch (error) {
+            return console.error(error);
+        }
+    }finally{ }
+}
+
+CarServices.UPDATE = (id,car)=>{
+    try {
+        try {
+            const response = apiURL.put(`Car/Put/${id}`,car)
+
+            return response;
+
+        } catch (error) {
+            return console.error(error);
+        }
+    }finally{ }
+}
+
+CarServices.CREATE = (car)=>{
+    try {
+        try {
+            const response = apiURL.post(`Car/Post`,car)
+
+            return response;
+
+        } catch (error) {
+            return console.error(error);
+        }
+    }finally{ }
+}
+
+
 export default CarServices;

@@ -19,6 +19,7 @@ namespace CarAPI
     public class Startup
     {
         public IConfiguration Configuration { get; }
+        private readonly string _CorsPolicy = "MyCors";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,7 +34,14 @@ namespace CarAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarAPI", Version = "v1" });
             });
-
+            services.AddCors(options =>
+            options.AddPolicy(name:_CorsPolicy,builder=> {
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+                builder.AllowAnyOrigin();
+                
+                })
+            );
             services.ServicesPersistance(Configuration);
             services.ApplicationServices();
         }
@@ -51,6 +59,8 @@ namespace CarAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(_CorsPolicy);
 
             app.UseAuthorization();
 
